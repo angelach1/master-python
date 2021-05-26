@@ -2,5 +2,5 @@
 edad = 55
 print(edad)
 
-edad += 5
-print(edadpython)
+edad += 5 # hace lo mismo que 'edad = edad + 5'
+print(edad)
