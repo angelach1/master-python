@@ -104,9 +104,9 @@ print(calculadora(5, 10, True))
 print(calculadora(5, 10, False))
 print(calculadora(5, 10))
 
-"""
 # Ejemplo 7: Funciones anidadas
 print("############# EJEMPLO 7 ################")
+
 def getNombre(nombre):
      texto = f"El nombre es: {nombre}"
      return texto
@@ -120,4 +120,13 @@ def devuelveTodo(nombre, apellidos):
     return texto
 
 print(devuelveTodo("Angel", "Alhambra Chaparro"))
+
+"""
+
+# Ejemplo 8: Funciones Lambda. No llevan def y se usan en una sóla línea para cosas pequeñas
+print("############# EJEMPLO 8 ################")
+
+dime_el_year = lambda year: f"El años es {year}"
+
+print(dime_el_year(2020))
 
