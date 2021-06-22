@@ -4,7 +4,7 @@ Son colecciones o conjuntos de datos/valores, bajo un único nombre.
 Para acceder a esos valores podemos usar uin índice numérico.
 """
 
-'''
+
 # Definir lista
 peliculas = ["Batman", "Spiderman", "El señor de los anillos"]
 # Para definir una lista con list, a list hay que pasarle una tupla, por eso los dobles paréntesis
@@ -46,7 +46,7 @@ print("\n************* LISTADO DE CANTANTES ************")
 for cantante in cantantes:
     print(f"{cantantes.index(cantante) + 1} --- {cantante}")
 
-'''
+
 # Listas multidimensionales
 print("\n************* LISTADO DE CONTACTOS ************")
 contactos = [
