@@ -1,4 +1,5 @@
 from usuarios import usuario as modelo
+import notas.acciones 
 
 class Acciones:
 
@@ -47,9 +48,10 @@ class Acciones:
         """)
 
         accion = input("Qué quieres hacer?: ")
+        hazEl = notas.acciones.Acciones()
 
         if accion == "crear":
-            print("Vamos a crear")
+            hazEl.crear(usuario)
             self.proximasAcciones(usuario)
         
         elif accion == "mostrar":
