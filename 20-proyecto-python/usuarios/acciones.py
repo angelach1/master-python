@@ -1,4 +1,4 @@
-from usuarios import usuario as modelo
+import usuarios.usuario as modelo
 import notas.acciones 
 
 class Acciones:
@@ -55,11 +55,11 @@ class Acciones:
             self.proximasAcciones(usuario)
         
         elif accion == "mostrar":
-            print("Vamos a mostrar")
+            hazEl.mostrar(usuario)
             self.proximasAcciones(usuario)
 
         elif accion == "eliminar":
-            print("Vamos a eliminar")
+            hazEl.borrar(usuario)
             self.proximasAcciones(usuario)
         
         elif accion == "salir":
