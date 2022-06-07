@@ -9,7 +9,7 @@ contador = 0
 resultado = 0
 
 for contador in range(1, 11):
-    print("voya por el  " + str(contador))
+    print("voy por el  " + str(contador))
     # resultado = resultado + contador
     resultado += contador
 

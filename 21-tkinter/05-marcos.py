@@ -22,6 +22,19 @@ marco.config(
 )
 
 marco.pack(side=LEFT, anchor=SW)
+marco.pack_propagate(False) # Esto evita que el marco se contraiga al insertarle un Label
+
+texto = Label(marco, text="Primer marco") 
+texto.config(
+    bg="red",
+    fg="white",
+    font=("Arial", 20),
+    height=10,
+    width=10,
+    bd=3
+)
+texto.pack(anchor=CENTER, fill=Y, expand=YES)
+
 
 marco = Frame(marco_padre, width=300, height=300)
 marco.config(
