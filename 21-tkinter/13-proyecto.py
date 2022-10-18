@@ -25,7 +25,7 @@ def home():
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=20
     )
     home_label.grid(row=0, column=0)
 
@@ -41,7 +41,7 @@ def add():
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=20
     )
     add_label.grid(row=0, column=0)
 
@@ -57,7 +57,7 @@ def info():
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=20
     )
     info_label.grid(row=0, column=0)
     data_label.grid(row=1, column=0)
