@@ -1,11 +1,12 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 # MVC = Modelo Vista Controlador -> Acciones (métodos)
 #MVT = Modelo Template Vista -> Acciones (métodos)
 
+
 layout = """
-   <h1>Sitio web con Django | Ángel Alhambra</h1>
+   <h4>Sitio web con Django | Ángel Alhambra</h4>
    </hr>
    <ul>
       <li>
@@ -16,6 +17,9 @@ layout = """
       </li>
       <li>
          <a href="/pagina-pruebas">Página de pruebas</a>
+      </li>
+      <li>
+         <a href="/contacto-dos">Contacto</a>
       </li>
    </ul>
    </hr>
@@ -34,19 +38,22 @@ def index(request):
       year += 1
 
    html += "</ul>"
-   return HttpResponse(layout + html)
+   return render(request, 'index.html')
 
 def hola_mundo(request):
-   return HttpResponse(layout + """
-      <h1>Hola mundo con Django!!</h1>
-      <h3>Soy Ángel Alhambra WEB</h3>
-   """)
+   return render(request, 'hola_mundo.html')
 
-def pagina(request):
-   return HttpResponse(layout + """
-      <h1>Página de mi web</h1>
-      <p>Creado por Ángel Alhambra</p>
-   """)
+def pagina(request, redirigir = 0):
 
-def contacto(request, nombre, apellidos):
-   return HttpResponse(layout + f"<h2>Contacto {nombre} {apellidos}</h2>")
+   if redirigir == 1:
+      return redirect('contacto', nombre = "Ángel", apellidos = "Alhambra")
+
+   return render(request, 'pagina.html')
+   
+def contacto(request, nombre="", apellidos=""):
+   html = ""
+
+   if nombre and apellidos:
+      html += "<p>El nombre completo es:</p>"
+      html += f"<h3>{nombre} {apellidos}</h3>"
+   return HttpResponse(layout + f"<h2>Contacto</h2>" + html)
