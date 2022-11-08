@@ -10,29 +10,37 @@
    </title>
    {% load static %}
    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"
-   
 </head>
 <body>
+   <!-- Cabecera dela página-->
+   <header>
+      <div id="logotipo">
+         <!--Logo django-->
+         
+         <h1>Sitio web con Django | Ángel Alhambra</h1>
+         </hr>
+      </div>
+   </header>
    
-   <h1>Sitio web con Django | Ángel Alhambra</h1>
-   </hr>
-   <ul>
-      <li>
-         <a href="/inicio">Inicio</a>
-      </li>
-      <li>
-         <a href="/hola-mundo">Hola Mundo</a>
-      </li>
-      <li>
-         <a href="/pagina-pruebas">Página de pruebas</a>
-      </li>
-      <li>
-         <a href="/contacto-dos">Contacto</a>
-      </li>
-   </ul>
-   </hr>
-
+   <nav>
+      <ul>
+         <li>
+            <a href="/inicio">Inicio</a>
+         </li>
+         <li>
+            <a href="/hola-mundo">Hola Mundo</a>
+         </li>
+         <li>
+            <a href="/pagina-pruebas">Página de pruebas</a>
+         </li>
+         <li>
+            <a href="/contacto-dos">Contacto</a>
+         </li>
+      </ul>
+   </nav>
+ 
    <div id="content">
+      <h2 class="title">Título prueba</h2>
       <!-- Código que viene de templates -->
       {% block content %}
          <strong>Contenido del bloque original!!!</strong>
@@ -40,7 +48,6 @@
    </div>
 
    <footer>
-      <hr></hr>
       <p>Master en Python &copy; Ángel Alhambra </p>
    </footer>
 
