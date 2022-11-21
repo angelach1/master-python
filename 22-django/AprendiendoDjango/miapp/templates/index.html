@@ -1,9 +1,24 @@
 {% extends 'layout.html' %}
 
-{% block title %} Inicio {% endblock %}
+{% block title %} {{title}} {% endblock %}
 
 {% block content %}
-   <h1 class="title">Esta es la página de Inicio</h1>
+
+<!-- Esto es un comentario en HTML -->
+{% comment "Nota para el comentario" %}
+   Esto es el texto del comentario
+{% endcomment %}
+
+   <h1 class="title">{{title}}</h1>
+   
+   <p>{{mi_variable}}</p>
+
+   {% if nombre and nombre == "Ángel Alhambra"%}
+      <p>{{nombre}}</p>
+   {% else %}
+      <strong>El nombre no existe no no coincide</strong>
+   {% endif %}
+
    <p>Años pares hasta el 2050:</p>
 {% endblock %}
 
