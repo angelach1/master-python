@@ -3,6 +3,32 @@
 {% block title %} Página de pruebas {% endblock %}
 
 {% block content %}
-<h1 class="title">Página de mi web</h1>
-<p>Creado por Ángel Alhambra Chaparro</p>
+
+   <h1 class="title">Página de mi web</h1>
+   
+   <p>{{"Creado por Ángel Alhambra Chaparro ñññ"|cut:"ñ"}}</p>
+
+   {{texto|default:"no ha nada en la variable texto que viene de views.py"}}
+
+   <p>Primer elemento de la lista: {{lista|first}}</p>
+
+   <p>Último elemento de la lista: {{lista|last}}</p>
+
+   <p>{{lista|join:", "}}</p>
+
+   <p>{{lista|random}}</p>
+
+   <p>Total de elementos de la lista: {{lista|length}}</p>
+
+   <p>Longitud de un texto: {{"Texto de pruebas"|length}}</p>
+
+   <p>{{"Texto de pruebas"|upper}}</p>
+
+   <p>{{"<h1>Texto</h1> de <strong>pruebas</strong>"|striptags|wordcount}}</p>
+
+   {% load filters %}  
+
+   {{"Ángel Alhambra WEB"|saludo|safe}}
+
+
 {% endblock %}

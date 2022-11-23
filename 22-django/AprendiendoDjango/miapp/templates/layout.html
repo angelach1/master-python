@@ -8,8 +8,11 @@
       {% endblock %}
       | Ángel Alhambra
    </title>
+ 
    {% load static %}
+   
    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"
+
 </head>
 <body>
    <!-- Cabecera dela página-->
@@ -25,16 +28,16 @@
    <nav>
       <ul>
          <li>
-            <a href="/inicio">Inicio</a>
+            <a href="{% url 'inicio'%}">Inicio</a>
          </li>
          <li>
-            <a href="/hola-mundo">Hola Mundo</a>
+            <a href="{% url 'hola_mundo'%}">Hola Mundo</a>
          </li>
          <li>
-            <a href="/pagina-pruebas">Página de pruebas</a>
+            <a href="{% url 'pagina'%}">Página de pruebas</a>
          </li>
          <li>
-            <a href="/contacto-dos">Contacto</a>
+            <a href="{% url 'contacto' 'Ángel' 'Alhambra'%}">Contacto</a>
          </li>
       </ul>
    </nav>
@@ -57,7 +60,7 @@
    </div>
 
    <footer>
-      <p>Master en Python &copy; Ángel Alhambra </p>
+      <p>Master en Python &copy; Ángel Alhambra - {% now "d/m/Y" %}</p>
    </footer>
 
 </body>

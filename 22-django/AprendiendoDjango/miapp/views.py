@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 # MVC = Modelo Vista Controlador -> Acciones (métodos)
-#MVT = Modelo Template Vista -> Acciones (métodos)
+# MVT = Modelo Template Vista -> Acciones (métodos)
 
 
 layout = """
@@ -26,11 +26,12 @@ layout = """
 """
 
 def index(request):
-   html = """
+   """
+   html = ""
       <h1>Esta es la página de Inicio</h1>
       <p>Años pares hasta el 2050:</p>
       <ul>
-   """
+   ""
    year = 2022
    while year <= 2050:
       if year % 2 == 0:
@@ -38,13 +39,20 @@ def index(request):
       year += 1
 
    html += "</ul>"
+   """
+   year = 2022
+   hasta = range(year, 2051)
 
    nombre = "Ángel Alhambra"
 
+   lenguajes = ["JavaScript", "Python", "PHP", "C"]
+   
    return render(request, 'index.html', {
       'title': 'Inicio',
       'mi_variable': 'Soy un dato que está en la vista',
-      'nombre': nombre
+      'nombre': nombre,
+      'lenguajes': lenguajes,
+      'years': hasta
    })
 
 def hola_mundo(request):
@@ -55,7 +63,10 @@ def pagina(request, redirigir = 0):
    if redirigir == 1:
       return redirect('contacto', nombre = "Ángel", apellidos = "Alhambra")
 
-   return render(request, 'pagina.html')
+   return render(request, 'pagina.html', {
+      'texto': "Este es mi texto",
+      'lista': ["uno", "dos", "tres", "cuatro", "cinco"]
+   })
    
 def contacto(request, nombre="", apellidos=""):
    html = ""
