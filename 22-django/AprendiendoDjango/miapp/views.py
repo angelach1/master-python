@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article
+from django.db.models import Q
 
 # Create your views here.
 # MVC = Modelo Vista Controlador -> Acciones (métodos)
@@ -111,6 +112,18 @@ def editar_articulo(request, id):
 def articulos(request):
    #articulos = Article.objects.order_by('id')[2:4]
    articulos = Article.objects.all()
+   #articulos = Article.objects.filter(title = "Batman")
+   #articulos = Article.objects.filter(title__contains = "artículo")
+   #articulos = Article.objects.filter(id__lte = 7, title__contains = "artículo")
+   #articulos = Article.objects.filter(id__gte = 7, title__contains = "artículo")
+   
+   #articulos = Article.objects.raw("SELECT * FROM miapp_article WHERE id = 5")
+
+   #uso de OR con Django
+   #Usar import Q 
+   articulos = Article.objects.filter(
+      Q(title__contains = "Cuarto") | Q(title__contains = "Batman")
+   )
 
    return render(request, 'articulos.html', {
       'articulos': articulos
